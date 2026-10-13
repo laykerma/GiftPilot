@@ -1,102 +1,118 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const questions = [
+const leftQuestions = [
   {
-    question: "How does GiftPilot work?",
+    id: "l1",
+    question: "Is there a minimum order?",
     answer:
-      "Choose a gift, personalise your message, add recipients, then send immediately or schedule delivery for later.",
+      "No. Send one card or a thousand from the same account. No subscription, no monthly commitment.",
   },
   {
-    question: "Can recipients choose their own gift?",
+    id: "l2",
+    question: "Can I add my company branding?",
     answer:
-      "Yes. You can send a gift card from a specific brand or let recipients select from available brands they know and love.",
+      "Yes. You can add your company logo, brand colours, custom message, and sender name to the digital gift delivery email.",
   },
   {
-    question: "Can I send gifts to multiple people at once?",
+    id: "l3",
+    question: "How are gift cards delivered?",
     answer:
-      "Absolutely. Upload your recipient list to prepare a bulk campaign, personalise the message, and send gifts together.",
+      "Gift cards are delivered digitally via email or SMS. The recipient clicks a secure link to view and redeem their card.",
   },
   {
-    question: "Can I schedule gifts in advance?",
+    id: "l4",
+    question: "Do you provide GST tax invoices?",
     answer:
-      "Yes. Set a future delivery date so birthday, seasonal and recognition gifts arrive at the right time.",
+      "Every order generates a GST-compliant tax invoice. Automatic, downloadable, and ready for your bookkeeper.",
+  },
+];
+
+const rightQuestions = [
+  {
+    id: "r1",
+    question: "Can I pay on invoice term?",
+    answer:
+      "Yes. Approved business accounts can pay on invoice terms, or pay instantly via credit card.",
   },
   {
-    question: "Can I add my company's branding?",
+    id: "r2",
+    question: "What about Fringe Benefits Tax?",
     answer:
-      "You can personalise gifting communications with your business details and a message that feels like it came from your team.",
+      "Gift cards under $300 per recipient, given infrequently, generally qualify as a minor benefit exempt from Fringe Benefits Tax.",
   },
   {
-    question: "How do invoices and FBT work?",
+    id: "r3",
+    question: "Do the gift cards expire?",
     answer:
-      "GiftPilot provides business gifting and invoicing support. FBT treatment depends on your circumstances, so check with your accountant or tax adviser for advice specific to your business.",
+      "Under Australian consumer law, all gift cards sold on GiftPilot come with a minimum 3-year expiry period, and many never expire.",
+  },
+  {
+    id: "r4",
+    question: "Can I bulk upload recipients?",
+    answer:
+      "Yes! You can upload a simple CSV or Excel spreadsheet to deliver hundreds of cards in a single flow.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null);
+  // First item open by default to match Image 1
+  const [openItems, setOpenItems] = useState({ l1: true });
+
+  const toggleItem = (id) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const renderGroup = (items) => (
+    <div className="overflow-hidden rounded-xl border border-slate-200/90 bg-white divide-y divide-slate-200/90 shadow-xs">
+      {items.map(({ id, question, answer }) => {
+        const isOpen = !!openItems[id];
+        return (
+          <div key={id} className="transition-colors hover:bg-slate-50/50">
+            <button
+              type="button"
+              className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition"
+              aria-expanded={isOpen}
+              onClick={() => toggleItem(id)}
+            >
+              <span className="text-sm font-bold text-slate-900 sm:text-base">
+                {question}
+              </span>
+              <ChevronDown
+                size={18}
+                className={`shrink-0 text-slate-500 transition-transform duration-200 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isOpen && (
+              <div className="px-6 pb-5 pt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
+                {answer}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
-    <section
-      id="faq"
-      className="scroll-mt-20 bg-white py-20 sm:py-24"
-    >
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.18em] text-rose-500 sm:text-sm">
-            Frequently asked questions
-          </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
-            Business gifting, answered
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            Everything you need to know to make your next gifting moment easier.
-          </p>
-        </div>
+    <section id="faq" className="scroll-mt-20 bg-white pb-12 pt-8 sm:pb-16 sm:pt-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+          Business gifting, answered
+        </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-8 md:grid-cols-2">
-          {questions.map((item, index) => {
-            const isOpen = openIndex === index;
-            const answerId = `faq-answer-${index}`;
-
-            return (
-              <article
-                key={item.question}
-                className="border-b border-slate-200"
-              >
-                <h3>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left"
-                    aria-expanded={isOpen}
-                    aria-controls={answerId}
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                  >
-                    <span className="text-sm font-bold leading-6 text-slate-900 sm:text-base">
-                      {item.question}
-                    </span>
-                    <ChevronDown
-                      size={19}
-                      className={`shrink-0 text-rose-500 transition-transform ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                </h3>
-                {isOpen && (
-                  <div
-                    id={answerId}
-                    className="pb-5 pr-8 text-sm leading-6 text-slate-600"
-                  >
-                    {item.answer}
-                  </div>
-                )}
-              </article>
-            );
-          })}
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+          {renderGroup(leftQuestions)}
+          {renderGroup(rightQuestions)}
         </div>
       </div>
     </section>
   );
 }
+
+

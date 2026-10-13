@@ -2,11 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  Fluid root scale:
+  - Mobile & Tablet (< 1280px): 16px (chuẩn 100% cho mobile, không bị vỡ giao diện)
+  - Laptop (1280px - 1439px): 17px
+  - Desktop 1440p (1440px - 1679px): 18px
+  - Desktop Full HD 1080p (>= 1680px - 1920px): 20px (tương đương phóng tỉ lệ 125% tự nhiên ở trạng thái 100% zoom)
+*/
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1680px) {
+  html {
+    font-size: 19.5px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 body {
   margin: 0;
   min-width: 320px;
 }
+

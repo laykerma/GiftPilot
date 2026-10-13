@@ -1,96 +1,238 @@
 import React from "react";
-import { ArrowRight, Check, Gift, Sparkles } from "lucide-react";
-
-const benefits = ["1-5 min delivery", "Hundreds of brands", "B2F Tax friendly"];
+import { BadgeCheck, FileText, Mail, Zap } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#fffaf9]">
-      <div className="absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-rose-100/80 blur-3xl" />
-      <div className="absolute -bottom-48 left-1/3 h-80 w-80 rounded-full bg-orange-100/70 blur-3xl" />
+    <section className="relative overflow-hidden bg-white pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-0">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-end gap-12 lg:grid-cols-2 lg:gap-8">
+          {/* Left Content */}
+          <div className="flex flex-col justify-center pb-0 lg:pb-16 xl:pb-20">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#e11d48]">
+              FOR BUSINESS
+            </span>
+            <h1 className="mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
+              Send gift cards your team and clients actually want.
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              Reward staff, thank clients, run incentives. Choose from hundreds of Australian brands, deliver by email or SMS in seconds, and skip the corporate gifting guesswork.
+            </p>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-rose-100 bg-white px-4 py-2 text-xs font-bold text-rose-600 shadow-sm sm:text-sm">
-            <Sparkles size={15} /> The smarter way to send business gifts
-          </span>
-          <h1 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            Send gift cards your team and clients actually want.
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-            Make every thank-you count. Send thoughtful digital gift cards in minutes, with effortless delivery and rewards recipients can choose for themselves.
-          </p>
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#get-started"
+                className="inline-flex items-center justify-center rounded-xl bg-[#e11d48] px-7 py-3.5 text-base font-bold text-white shadow-sm transition hover:bg-[#be123c]"
+              >
+                Get started
+              </a>
+              <a
+                href="mailto:hello@giftpilot.com.au"
+                className="inline-flex items-center justify-center rounded-xl border border-[#e11d48] bg-white px-7 py-3.5 text-base font-bold text-[#e11d48] transition hover:bg-rose-50"
+              >
+                Talk to our team
+              </a>
+            </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#get-started" className="inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-rose-500/20 transition hover:-translate-y-0.5 hover:bg-rose-600">
-              Get started <ArrowRight size={17} />
-            </a>
-            <a href="mailto:hello@giftpilot.example" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:border-rose-300 hover:text-rose-600">
-              Talk to our team
-            </a>
-          </div>
-
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm font-medium text-slate-600">
-            {benefits.map((benefit) => (
-              <li key={benefit} className="inline-flex items-center gap-2">
-                <Check size={16} className="text-emerald-600" />
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute -left-12 top-20 h-32 w-32 rounded-full bg-rose-200/70 blur-3xl" />
-          <div className="absolute -right-12 bottom-20 h-40 w-40 rounded-full bg-orange-200/70 blur-3xl" />
-
-          <div className="relative mx-auto max-w-[19rem] rounded-[2.7rem] border-[8px] border-slate-900 bg-slate-900 p-2 shadow-2xl shadow-rose-900/20 sm:max-w-[21rem]">
-            <div className="overflow-hidden rounded-[2rem] bg-white">
-              <div className="flex items-center justify-between bg-white px-5 pb-3 pt-5 text-[11px] font-bold text-slate-900">
-                <span>9:41</span>
-                <span className="h-4 w-20 rounded-full bg-slate-900" aria-hidden="true" />
-                <span>•••</span>
+            {/* 3 Value Propositions */}
+            <div className="mt-12 flex flex-wrap items-center gap-6 sm:gap-8 lg:gap-10">
+              <div className="flex items-center gap-3">
+                <Zap size={22} className="text-[#e11d48]" strokeWidth={2} />
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 leading-snug">Instant delivery</h4>
+                  <p className="text-xs text-slate-500">Email or SMS</p>
+                </div>
               </div>
 
-              <div className="bg-[#fffaf9] px-5 pb-6 pt-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500 text-white"><Gift size={16} /></span>
-                    <span className="text-sm font-extrabold text-slate-900">GiftPilot</span>
-                  </div>
-                  <span className="text-xs font-semibold text-slate-400">•••</span>
+              <div className="flex items-center gap-3">
+                <BadgeCheck size={22} className="text-[#e11d48]" strokeWidth={2} />
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 leading-snug">Hundreds of brands</h4>
+                  <p className="text-xs text-slate-500">They&apos;ll love</p>
                 </div>
+              </div>
 
-                <div className="mt-7 rounded-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-orange-400 p-5 text-white shadow-lg shadow-rose-500/20">
-                  <div className="flex items-start justify-between">
-                    <span className="rounded-lg bg-white/20 p-2"><Sparkles size={16} /></span>
-                    <span className="text-[9px] font-bold tracking-[0.16em] text-white/80">A LITTLE THANK YOU</span>
-                  </div>
-                  <p className="mt-7 text-xs font-medium text-white/80">You&apos;ve got a gift!</p>
-                  <p className="mt-1 text-xl font-extrabold">Thanks for being amazing.</p>
-                  <div className="mt-5 flex items-center justify-between border-t border-white/25 pt-3">
-                    <span className="text-xs font-semibold">Gift card value</span>
-                    <span className="text-lg font-extrabold">$50</span>
-                  </div>
+              <div className="flex items-center gap-3">
+                <FileText size={22} className="text-[#e11d48]" strokeWidth={2} />
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 leading-snug">GST tax invoices</h4>
+                  <p className="text-xs text-slate-500">On every order</p>
                 </div>
-
-                <div className="mt-5 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-800">Choose your favorite</span>
-                  <span className="text-[10px] font-bold text-rose-500">See all</span>
-                </div>
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  <div className="flex h-16 items-center justify-center rounded-xl bg-emerald-50 text-xs font-extrabold text-emerald-700">coles</div>
-                  <div className="flex h-16 items-center justify-center rounded-xl bg-slate-900 text-center text-[10px] font-extrabold leading-tight text-yellow-300">JB<br />Hi-Fi</div>
-                  <div className="flex h-16 items-center justify-center rounded-xl bg-blue-50 text-xs font-extrabold text-blue-800">MYER</div>
-                </div>
-                <button type="button" className="mt-5 w-full rounded-full bg-slate-900 py-3 text-xs font-bold text-white">Redeem gift card</button>
               </div>
             </div>
           </div>
 
-          <div className="absolute -right-1 top-16 hidden items-center gap-2.5 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:flex sm:-right-8">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-700"><Check size={18} /></span>
-            <span><span className="block text-xs font-bold text-slate-900">Gift delivered!</span><span className="mt-0.5 block text-[10px] text-slate-500">Right to their inbox</span></span>
+          {/* Right Column - Phone Mockup with Cropped Bottom */}
+          <div className="relative flex items-end justify-center lg:justify-start lg:pl-6 xl:pl-10">
+            <div className="relative w-full max-w-[340px] sm:max-w-[370px] lg:max-w-[380px]">
+              {/* Left Flight Path & Paper Airplane (pointing to phone) */}
+              <div className="pointer-events-none absolute -left-16 top-1/2 z-10 hidden -translate-y-12 sm:block md:-left-24 lg:-left-24 xl:-left-28">
+                <svg
+                  width="140"
+                  height="170"
+                  viewBox="0 0 140 170"
+                  fill="none"
+                  className="overflow-visible"
+                >
+                  <path
+                    d="M 5 150 C 25 85, 80 45, 125 10"
+                    stroke="#e11d48"
+                    strokeWidth="1.75"
+                    strokeDasharray="4 4"
+                    fill="none"
+                  />
+                  <g transform="translate(118, 2) rotate(22)">
+                    <path
+                      d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                      fill="#e11d48"
+                      className="drop-shadow-sm"
+                    />
+                  </g>
+                </svg>
+              </div>
+
+              {/* Right Pink Envelope Badge - floating at top right */}
+              <div className="absolute -right-3 top-6 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#f43f5e] text-white shadow-xl shadow-rose-500/25 sm:left-[calc(100%+14px)] sm:top-8 sm:right-auto">
+                <Mail size={26} strokeWidth={2.2} className="text-white" />
+              </div>
+
+              {/* Right Flight Path (curving down from Envelope badge) */}
+              <div className="pointer-events-none absolute -right-14 top-12 z-10 hidden sm:block sm:left-[calc(100%+8px)] sm:right-auto">
+                <svg
+                  width="110"
+                  height="160"
+                  viewBox="0 0 110 160"
+                  fill="none"
+                  className="overflow-visible"
+                >
+                  <path
+                    d="M 30 10 C 70 35, 80 80, 40 120 C 25 138, 5 146, -15 150"
+                    stroke="#e11d48"
+                    strokeWidth="1.75"
+                    strokeDasharray="4 4"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+
+              {/* Floating "Delivered in seconds" Badge - positioned to the RIGHT of the phone */}
+              <div className="absolute -right-2 bottom-16 z-20 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:left-[calc(100%+14px)] sm:right-auto sm:bottom-24 sm:w-max">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-[#e11d48]">
+                  <Zap size={18} className="fill-[#e11d48] text-[#e11d48]" />
+                </div>
+                <div className="text-left leading-tight">
+                  <p className="text-xs font-bold text-slate-900">Delivered in</p>
+                  <p className="text-xs font-bold text-slate-900">seconds</p>
+                </div>
+              </div>
+
+              {/* Smartphone Frame - Flat cut at bottom */}
+              <div className="relative rounded-t-[44px] rounded-b-none border-t-[8px] border-x-[8px] border-b-0 border-slate-900 bg-slate-900 shadow-2xl">
+                {/* Screen Container */}
+                <div className="overflow-hidden rounded-t-[36px] rounded-b-none bg-white pt-2.5 pb-8">
+                  {/* Status Bar with Classic iPhone Notch */}
+                  <div className="relative flex items-center justify-between px-6 pb-2 text-[12px] font-semibold text-slate-900">
+                    <span className="w-12 text-left font-bold">9:41</span>
+                    {/* Notch */}
+                    <div className="absolute left-1/2 top-0 flex h-5 w-32 -translate-x-1/2 items-center justify-center rounded-b-2xl bg-slate-900">
+                      <div className="h-1 w-10 rounded-full bg-slate-800" />
+                    </div>
+                    {/* Signal, Wifi, Battery */}
+                    <div className="flex w-12 items-center justify-end gap-1.5 text-slate-900">
+                      <svg className="h-3 w-3 fill-current" viewBox="0 0 16 16">
+                        <rect x="1" y="11" width="2" height="4" rx="0.5" />
+                        <rect x="5" y="8" width="2" height="7" rx="0.5" />
+                        <rect x="9" y="5" width="2" height="10" rx="0.5" />
+                        <rect x="13" y="2" width="2" height="13" rx="0.5" />
+                      </svg>
+                      <svg className="h-3 w-3 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                        <line x1="12" y1="20" x2="12.01" y2="20" strokeWidth="3" />
+                      </svg>
+                      <div className="flex items-center">
+                        <div className="h-2.5 w-5 rounded-[2px] border border-slate-900 p-0.5">
+                          <div className="h-full w-3 rounded-[1px] bg-slate-900" />
+                        </div>
+                        <div className="h-1 w-0.5 rounded-r-[1px] bg-slate-900" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step Progress Indicators */}
+                  <div className="mt-2.5 flex items-center justify-center gap-4 px-4 text-[11px] font-medium text-slate-400">
+                    <span className="flex items-center gap-1">
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full border border-slate-300 text-[9px] font-semibold text-slate-500">1</span>
+                      Choose
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full border border-slate-300 text-[9px] font-semibold text-slate-500">2</span>
+                      Personalise
+                    </span>
+                    <span className="flex items-center gap-1 text-[#e11d48]">
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#e11d48] text-[9px] font-bold text-white">3</span>
+                      Send
+                    </span>
+                  </div>
+
+                  {/* Main Screen Content */}
+                  <div className="relative px-6">
+                    {/* Screen Title */}
+                    <h3 className="mt-5 text-center text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                      You&apos;ve received<br />a gift card!
+                    </h3>
+
+                    {/* JB Hi-Fi Card */}
+                    <div className="mt-5 rounded-2xl bg-[#fed000] py-6 px-4 text-center shadow-lg shadow-amber-300/40">
+                      <div className="text-2xl font-black tracking-tight text-black sm:text-3xl">
+                        JB HI-FI
+                      </div>
+                      <div className="mt-1 text-xs font-black tracking-widest text-black">
+                        GIFT CARD
+                      </div>
+                    </div>
+
+                    {/* Confetti Dots sprinkled around */}
+                    <div className="pointer-events-none relative">
+                      {/* Left dots */}
+                      <span className="absolute -left-2 top-2 h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
+                      <span className="absolute left-1 top-7 h-1 w-1 rounded-full bg-[#f59e0b]" />
+                      <span className="absolute -left-1 bottom-1 h-1.5 w-1.5 rounded-full bg-[#ec4899]" />
+                      
+                      {/* Right dots */}
+                      <span className="absolute -right-2 top-3 h-1 w-1 rounded-full bg-[#f59e0b]" />
+                      <span className="absolute right-2 top-7 h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
+                      <span className="absolute right-0 bottom-2 h-1 w-1 rounded-full bg-[#10b981]" />
+                      
+                      {/* Center dots */}
+                      <span className="absolute left-1/4 -top-1 h-1 w-1 rounded-full bg-[#e11d48]" />
+                      <span className="absolute right-1/4 -top-1 h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
+
+                      {/* Amount & Sender */}
+                      <div className="mt-4 text-center">
+                        <p className="text-2xl font-black tracking-tight text-slate-950">$100.00</p>
+                        <p className="mt-0.5 text-xs font-medium text-slate-600">from Acme Pty Ltd</p>
+                      </div>
+
+                      {/* Message Box */}
+                      <div className="mt-3.5 rounded-xl bg-slate-100/90 py-2.5 px-4 text-center">
+                        <p className="text-xs font-semibold text-slate-700">
+                          Thanks for all your hard work!
+                        </p>
+                      </div>
+
+                      {/* Bottom Confetti Dots */}
+                      <div className="mt-3 flex items-center justify-center gap-3">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
+                        <span className="h-1 w-1 rounded-full bg-[#f59e0b]" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#f43f5e]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

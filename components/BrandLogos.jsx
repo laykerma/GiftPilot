@@ -1,13 +1,20 @@
 import React, { useRef } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const brands = [
-  { name: "Coles", style: "font-black lowercase tracking-tight text-red-600" },
-  { name: "JB Hi-Fi", style: "font-black tracking-tight text-slate-950" },
-  { name: "Myer", style: "font-serif font-bold tracking-wide text-blue-900" },
-  { name: "rebel", style: "font-black italic lowercase tracking-tight text-slate-800" },
-  { name: "THE ICONIC", style: "font-black tracking-[0.08em] text-slate-900" },
-  { name: "HOYTS", style: "font-black italic tracking-wide text-red-700" },
+  { name: "Coles", render: () => <span className="text-xl font-black lowercase tracking-tight text-[#e11d48]">coles</span> },
+  {
+    name: "JB Hi-Fi",
+    render: () => (
+      <span className="rounded bg-[#ffde00] px-3 py-1 text-base font-black italic tracking-tighter text-slate-950">
+        JB HI-FI
+      </span>
+    ),
+  },
+  { name: "MYER", render: () => <span className="font-serif text-lg font-bold tracking-widest text-slate-900">MYER</span> },
+  { name: "rebel", render: () => <span className="text-xl font-black italic tracking-tight text-slate-900">rebel</span> },
+  { name: "THE ICONIC", render: () => <span className="text-sm font-black tracking-[0.14em] text-slate-900">THE ICONIC</span> },
+  { name: "HOYTS", render: () => <span className="text-xl font-black italic tracking-wide text-[#e11d48]">HOYTS</span> },
 ];
 
 export default function BrandLogos() {
@@ -22,49 +29,48 @@ export default function BrandLogos() {
   };
 
   return (
-    <section id="brands" className="scroll-mt-20 border-y border-slate-100 bg-white py-10 sm:py-12">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.18em] text-slate-400 sm:text-sm">
+    <section id="brands" className="scroll-mt-20 border-y border-slate-100 bg-[#fafafa] py-10 sm:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-xs font-bold uppercase tracking-[0.16em] text-[#e11d48]">
           HUNDREDS OF BRANDS YOUR RECIPIENTS LOVE
         </p>
-        <div className="mt-7 flex items-center gap-3 sm:gap-5">
+
+        <div className="mt-7 flex items-center gap-3 sm:gap-4">
           <button
             type="button"
             onClick={() => scroll(-1)}
             aria-label="Scroll brands left"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-rose-300 hover:text-rose-600 sm:h-10 sm:w-10"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-rose-300 hover:text-[#e11d48]"
           >
-            <ArrowLeft size={18} />
+            <ChevronLeft size={18} />
           </button>
+
           <div
             ref={carouselRef}
-            className="flex min-w-0 flex-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5"
+            className="flex min-w-0 flex-1 snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {brands.map((brand) => (
               <div
                 key={brand.name}
-                className="flex h-20 min-w-[9.5rem] snap-center items-center justify-center rounded-xl border border-slate-100 bg-white px-5 text-xl transition hover:border-slate-200 hover:shadow-sm sm:min-w-0 sm:flex-1"
+                className="flex h-16 min-w-[8.5rem] snap-center items-center justify-center rounded-xl border border-slate-200/80 bg-white px-5 shadow-xs transition hover:border-slate-300 sm:min-w-0 sm:flex-1"
                 aria-label={brand.name}
               >
-                <span className={brand.style}>{brand.name}</span>
+                {brand.render()}
               </div>
             ))}
           </div>
+
           <button
             type="button"
             onClick={() => scroll(1)}
             aria-label="Scroll brands right"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-rose-300 hover:text-rose-600 sm:h-10 sm:w-10"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-rose-300 hover:text-[#e11d48]"
           >
-            <ArrowRight size={18} />
+            <ChevronRight size={18} />
           </button>
-        </div>
-        <div className="mt-4 flex justify-center gap-2 sm:hidden" aria-hidden="true">
-          <span className="h-1.5 w-6 rounded-full bg-rose-500" />
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
         </div>
       </div>
     </section>
   );
 }
+
