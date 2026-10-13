@@ -212,7 +212,7 @@ export default function Hero() {
                       {/* Amount & Sender */}
                       <div className="mt-4 text-center">
                         <p className="text-2xl font-black tracking-tight text-slate-950">$100.00</p>
-                        <p className="mt-0.5 text-xs font-medium text-slate-600">from Acme Pty Ltd</p>
+                        <p className="mt-0.5 text-xs font-medium text-slate-600">from GiftPilot Pty Ltd</p>
                       </div>
 
                       {/* Message Box */}

@@ -47,7 +47,7 @@ const platformFeatures = [
     icon: Gift,
     title: "1. Recipient choice",
     description:
-      "Nobody re-gifts a gift card they picked themselves. Instead of guessing whether your recipient drinks wine or wears size M, let them choose from hundreds of retailers across fashion, tech, food, travel and home. [CONFIRM: exact catalogue size]",
+      "Nobody re-gifts a gift card they picked themselves. Instead of guessing whether your recipient drinks wine or wears size M, let them choose from hundreds of retailers across fashion, tech, food, travel and home.",
   },
   {
     icon: Zap,
@@ -59,7 +59,7 @@ const platformFeatures = [
     icon: Users,
     title: "3. Send one or one thousand",
     description:
-      "No minimums, no subscriptions. Send a single card, or upload a spreadsheet of recipients and deliver hundreds in one flow. [CONFIRM: bulk / CSV upload is live]",
+      "No minimums, no subscriptions. Send a single card, or upload a spreadsheet of recipients and deliver hundreds in one flow.",
   },
   {
     icon: Palette,
@@ -71,7 +71,7 @@ const platformFeatures = [
     icon: FileText,
     title: "5. Proper tax invoices",
     description:
-      "Every order generates a GST-compliant tax invoice. Pay by card, or apply for invoice terms if you send regularly. (CONFIRM: invoice terms — offered? threshold / net-days?)",
+      "Every order generates a GST-compliant tax invoice. Pay by card, or apply for invoice terms if you send regularly.",
   },
   {
     icon: ShieldCheck,

@@ -215,7 +215,7 @@ export default function HowItWorks() {
             <div className="mt-6">
               <h3 className="text-xl font-bold text-slate-950">Send now or schedule</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                Deliver instantly or schedule to the minute. Track deliveries and redemptions from your dashboard. [CONFIRM: dashboard reporting is live and what it shows]
+                Deliver instantly or schedule to the minute. Track deliveries and redemptions from your dashboard.
               </p>
             </div>
           </article>
@@ -260,7 +260,7 @@ export default function HowItWorks() {
               <div>
                 <h4 className="text-lg font-bold text-slate-950">GST invoicing &amp; payment</h4>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  Tax invoices on every order — automatic, downloadable, ready for your bookkeeper. Pay by credit card, or apply for invoice terms if you send regularly. [CONFIRM: invoice terms policy]
+                  Tax invoices on every order — automatic, downloadable, ready for your bookkeeper. Pay by credit card, or apply for invoice terms if you send regularly.
                 </p>
               </div>
             </div>

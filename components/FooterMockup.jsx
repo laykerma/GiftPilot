@@ -36,10 +36,10 @@ export default function FooterMockup() {
       <rect x="156" y="58" width="206" height="136" rx="9" fill="#0f172a" />
       <rect x="162" y="64" width="194" height="124" rx="4" fill="#ffffff" />
       
-      {/* Acme & GiftNow Header */}
+      {/* GiftPilot Header */}
       <rect x="168" y="70" width="8" height="8" rx="2" fill="#e11d48" />
       <text x="179" y="74.5" fontSize="4.5" fill="#94a3b8" fontFamily="sans-serif">Welcome back,</text>
-      <text x="179" y="80.5" fontSize="6.2" fontWeight="700" fill="#0f172a" fontFamily="sans-serif">Acme Corporation</text>
+      <text x="179" y="80.5" fontSize="6.2" fontWeight="700" fill="#0f172a" fontFamily="sans-serif">GiftPilot Pty Ltd</text>
 
       <g transform="translate(308, 69)">
         <rect x="0" y="3" width="9" height="8" rx="1.5" fill="#e11d48" />
