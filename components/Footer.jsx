@@ -11,8 +11,8 @@ export default function Footer() {
       {/* Content aligned with the website container */}
       <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 px-4 py-5 sm:px-6 md:py-6 lg:flex-row lg:items-center lg:gap-6 lg:px-8 lg:py-6 xl:py-7">
         
-        {/* Left: 3D Pink Gift Box + Laptop Dashboard sitting on the pink floor */}
-        <div className="relative flex shrink-0 items-end justify-center lg:justify-start">
+        {/* Left: 3D Pink Gift Box + Laptop Dashboard sitting on the pink floor with gentle micro-hover */}
+        <div className="relative flex shrink-0 items-end justify-center transition-transform duration-500 ease-out hover:-translate-y-1 lg:justify-start">
           <FooterMockup />
         </div>
 

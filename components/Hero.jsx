@@ -80,23 +80,24 @@ export default function Hero() {
                     strokeWidth="1.75"
                     strokeDasharray="4 4"
                     fill="none"
+                    className="animate-dash-flow"
                   />
-                  <g transform="translate(118, 2) rotate(22)">
+                  <g className="animate-plane-flutter origin-center">
                     <path
                       d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
                       fill="#e11d48"
-                      className="drop-shadow-sm"
+                      className="drop-shadow-md"
                     />
                   </g>
                 </svg>
               </div>
 
-              {/* Right Pink Envelope Badge - floating at top right */}
-              <div className="absolute -right-3 top-6 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#f43f5e] text-white shadow-xl shadow-rose-500/25 sm:left-[calc(100%+14px)] sm:top-8 sm:right-auto">
-                <Mail size={26} strokeWidth={2.2} className="text-white" />
+              {/* Right Pink Envelope Badge - floating at top right with gentle bobbing & hover glow */}
+              <div className="absolute -right-3 top-6 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#f43f5e] text-white shadow-xl shadow-rose-500/25 transition-all duration-300 hover:scale-110 hover:shadow-rose-500/45 cursor-pointer animate-hero-float sm:left-[calc(100%+14px)] sm:top-8 sm:right-auto">
+                <Mail size={26} strokeWidth={2.2} className="text-white transition-transform duration-300 hover:rotate-6" />
               </div>
 
-              {/* Right Flight Path (curving down from Envelope badge) */}
+              {/* Right Flight Path (curving down from Envelope badge with flow animation) */}
               <div className="pointer-events-none absolute -right-14 top-12 z-10 hidden sm:block sm:left-[calc(100%+8px)] sm:right-auto">
                 <svg
                   width="110"
@@ -111,13 +112,14 @@ export default function Hero() {
                     strokeWidth="1.75"
                     strokeDasharray="4 4"
                     fill="none"
+                    className="animate-dash-flow"
                   />
                 </svg>
               </div>
 
-              {/* Floating "Delivered in seconds" Badge - positioned to the RIGHT of the phone */}
-              <div className="absolute -right-2 bottom-16 z-20 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:left-[calc(100%+14px)] sm:right-auto sm:bottom-24 sm:w-max">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-[#e11d48]">
+              {/* Floating "Delivered in seconds" Badge - positioned to the RIGHT of the phone with float animation */}
+              <div className="group absolute -right-2 bottom-16 z-20 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer animate-hero-float-alt sm:left-[calc(100%+14px)] sm:right-auto sm:bottom-24 sm:w-max">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-[#e11d48] transition-transform duration-300 group-hover:scale-110">
                   <Zap size={18} className="fill-[#e11d48] text-[#e11d48]" />
                 </div>
                 <div className="text-left leading-tight">
@@ -126,8 +128,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Smartphone Frame - Flat cut at bottom */}
-              <div className="relative rounded-t-[44px] rounded-b-none border-t-[8px] border-x-[8px] border-b-0 border-slate-900 bg-slate-900 shadow-2xl">
+              {/* Smartphone Frame - Flat cut at bottom with smooth micro-hover lift */}
+              <div className="group/phone relative rounded-t-[44px] rounded-b-none border-t-[8px] border-x-[8px] border-b-0 border-slate-900 bg-slate-900 shadow-2xl transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-slate-900/30">
                 {/* Screen Container */}
                 <div className="overflow-hidden rounded-t-[36px] rounded-b-none bg-white pt-2.5 pb-8">
                   {/* Status Bar with Classic iPhone Notch */}
@@ -170,8 +172,8 @@ export default function Hero() {
                       <span className="flex h-4 w-4 items-center justify-center rounded-full border border-slate-300 text-[9px] font-semibold text-slate-500">2</span>
                       Personalise
                     </span>
-                    <span className="flex items-center gap-1 text-[#e11d48]">
-                      <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#e11d48] text-[9px] font-bold text-white">3</span>
+                    <span className="flex items-center gap-1 text-[#e11d48] font-bold">
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#e11d48] text-[9px] font-bold text-white shadow-xs">3</span>
                       Send
                     </span>
                   </div>
@@ -183,31 +185,34 @@ export default function Hero() {
                       You&apos;ve received<br />a gift card!
                     </h3>
 
-                    {/* JB Hi-Fi Card */}
-                    <div className="mt-5 rounded-2xl bg-[#fed000] py-6 px-4 text-center shadow-lg shadow-amber-300/40">
-                      <div className="text-2xl font-black tracking-tight text-black sm:text-3xl">
+                    {/* JB Hi-Fi Card with Glossy Light Sheen and Hover Scale */}
+                    <div className="group/card relative mt-5 overflow-hidden rounded-2xl bg-[#fed000] py-6 px-4 text-center shadow-lg shadow-amber-300/40 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-amber-400/50 cursor-pointer">
+                      {/* Animated Holographic Light Sheen Passing Across Card */}
+                      <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-card-shimmer" />
+
+                      <div className="relative z-10 text-2xl font-black tracking-tight text-black sm:text-3xl transition-transform duration-300 group-hover/card:scale-105">
                         JB HI-FI
                       </div>
-                      <div className="mt-1 text-xs font-black tracking-widest text-black">
+                      <div className="relative z-10 mt-1 text-xs font-black tracking-widest text-black">
                         GIFT CARD
                       </div>
                     </div>
 
-                    {/* Confetti Dots sprinkled around */}
+                    {/* Confetti Dots sprinkled around with twinkling animations */}
                     <div className="pointer-events-none relative">
                       {/* Left dots */}
-                      <span className="absolute -left-2 top-2 h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
-                      <span className="absolute left-1 top-7 h-1 w-1 rounded-full bg-[#f59e0b]" />
-                      <span className="absolute -left-1 bottom-1 h-1.5 w-1.5 rounded-full bg-[#ec4899]" />
+                      <span className="absolute -left-2 top-2 h-1.5 w-1.5 rounded-full bg-[#e11d48] animate-confetti-1" />
+                      <span className="absolute left-1 top-7 h-1 w-1 rounded-full bg-[#f59e0b] animate-confetti-2" />
+                      <span className="absolute -left-1 bottom-1 h-1.5 w-1.5 rounded-full bg-[#ec4899] animate-confetti-3" />
                       
                       {/* Right dots */}
-                      <span className="absolute -right-2 top-3 h-1 w-1 rounded-full bg-[#f59e0b]" />
-                      <span className="absolute right-2 top-7 h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
-                      <span className="absolute right-0 bottom-2 h-1 w-1 rounded-full bg-[#10b981]" />
+                      <span className="absolute -right-2 top-3 h-1 w-1 rounded-full bg-[#f59e0b] animate-confetti-2" />
+                      <span className="absolute right-2 top-7 h-1.5 w-1.5 rounded-full bg-[#e11d48] animate-confetti-1" />
+                      <span className="absolute right-0 bottom-2 h-1 w-1 rounded-full bg-[#10b981] animate-confetti-3" />
                       
                       {/* Center dots */}
-                      <span className="absolute left-1/4 -top-1 h-1 w-1 rounded-full bg-[#e11d48]" />
-                      <span className="absolute right-1/4 -top-1 h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
+                      <span className="absolute left-1/4 -top-1 h-1 w-1 rounded-full bg-[#e11d48] animate-confetti-3" />
+                      <span className="absolute right-1/4 -top-1 h-1.5 w-1.5 rounded-full bg-[#f59e0b] animate-confetti-1" />
 
                       {/* Amount & Sender */}
                       <div className="mt-4 text-center">
@@ -216,7 +221,7 @@ export default function Hero() {
                       </div>
 
                       {/* Message Box */}
-                      <div className="mt-3.5 rounded-xl bg-slate-100/90 py-2.5 px-4 text-center">
+                      <div className="mt-3.5 rounded-xl bg-slate-100/90 py-2.5 px-4 text-center transition-colors duration-200 hover:bg-slate-100">
                         <p className="text-xs font-semibold text-slate-700">
                           Thanks for all your hard work!
                         </p>
@@ -224,9 +229,9 @@ export default function Hero() {
 
                       {/* Bottom Confetti Dots */}
                       <div className="mt-3 flex items-center justify-center gap-3">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#e11d48]" />
-                        <span className="h-1 w-1 rounded-full bg-[#f59e0b]" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#f43f5e]" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#e11d48] animate-confetti-1" />
+                        <span className="h-1 w-1 rounded-full bg-[#f59e0b] animate-confetti-2" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#f43f5e] animate-confetti-3" />
                       </div>
                     </div>
                   </div>
